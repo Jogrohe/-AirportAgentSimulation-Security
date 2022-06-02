@@ -13,4 +13,11 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>dhbw.sose2022.softwareengineering</groupId>
+            <artifactId>airportargentsim</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+    </dependencies>
 </project>
