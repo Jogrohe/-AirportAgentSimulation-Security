@@ -17,7 +17,7 @@
         <dependency>
             <groupId>dhbw.sose2022.softwareengineering</groupId>
             <artifactId>airportargentsim</artifactId>
-            <version>0.0.2</version>
+            <version>0.0.3</version>
         </dependency>
     </dependencies>
 </project>
