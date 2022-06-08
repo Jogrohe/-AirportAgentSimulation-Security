@@ -1,0 +1,28 @@
+[07 Juni 2022 - 15:18:14] [main/INFO]  Starting Airport Agent Simulation...
+[07 Juni 2022 - 15:18:14] [main/ERROR]  Failed to load plugins
+java.nio.file.NoSuchFileException: plugin
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsDirectoryStream.<init>(WindowsDirectoryStream.java:86) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.newDirectoryStream(WindowsFileSystemProvider.java:535) ~[?:?]
+	at java.nio.file.Files.newDirectoryStream(Files.java:482) ~[?:?]
+	at java.nio.file.Files.list(Files.java:3792) ~[?:?]
+	at dhbw.sose2022.softwareengineering.airportagentsim.simulation.AirportAgentSim.loadPluginDirectory(AirportAgentSim.java:151) ~[classes/:?]
+	at dhbw.sose2022.softwareengineering.airportagentsim.simulation.AirportAgentSim.run(AirportAgentSim.java:71) ~[classes/:?]
+	at dhbw.sose2022.softwareengineering.airportagentsim.simulation.main.Main.main(Main.java:12) ~[classes/:?]
+[07 Juni 2022 - 15:18:14] [main/INFO]  Plugin loading complete. 0 plugin(s) active.
+[07 Juni 2022 - 15:18:14] [main/ERROR]  Failed to load configuration from "configuration.json"
+java.nio.file.NoSuchFileException: configuration.json
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236) ~[?:?]
+	at java.nio.file.Files.newByteChannel(Files.java:380) ~[?:?]
+	at java.nio.file.Files.newByteChannel(Files.java:432) ~[?:?]
+	at java.nio.file.Files.readAllBytes(Files.java:3288) ~[?:?]
+	at java.nio.file.Files.readString(Files.java:3366) ~[?:?]
+	at java.nio.file.Files.readString(Files.java:3325) ~[?:?]
+	at dhbw.sose2022.softwareengineering.airportagentsim.simulation.config.SimulationConfiguration.<init>(SimulationConfiguration.java:86) ~[classes/:?]
+	at dhbw.sose2022.softwareengineering.airportagentsim.simulation.AirportAgentSim.run(AirportAgentSim.java:80) ~[classes/:?]
+	at dhbw.sose2022.softwareengineering.airportagentsim.simulation.main.Main.main(Main.java:12) ~[classes/:?]

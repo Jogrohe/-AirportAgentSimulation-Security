@@ -17,7 +17,18 @@
         <dependency>
             <groupId>dhbw.sose2022.softwareengineering</groupId>
             <artifactId>airportargentsim</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>dhbw.sose2022.softwareengineering</groupId>
+            <artifactId>airportargentsim</artifactId>
             <version>0.0.3</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.12</version>
         </dependency>
     </dependencies>
 </project>

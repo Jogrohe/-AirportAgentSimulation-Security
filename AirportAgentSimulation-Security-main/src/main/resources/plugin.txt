@@ -1,0 +1,4 @@
+id:8512324587
+name:Security
+authors:TEst
+entrypoint:Plugin.SecurityPlugin
