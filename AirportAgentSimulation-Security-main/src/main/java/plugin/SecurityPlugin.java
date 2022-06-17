@@ -6,7 +6,6 @@ import entities.officer;
 
 public class SecurityPlugin implements dhbw.sose2022.softwareengineering.airportagentsim.simulation.api.plugin.Plugin {
 
-
     @Override
     public void activate() {
         try {

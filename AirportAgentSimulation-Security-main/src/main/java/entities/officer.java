@@ -5,65 +5,82 @@ import dhbw.sose2022.softwareengineering.airportagentsim.simulation.simulation.S
 
 public class officer extends Agent {
     protected String name;
-    protected int xPos;
-    protected int yPos;
-    protected boolean onpatrol;
+    protected int posX;
+    protected int posY;
+    protected int width;
+    protected int height;
+
 
     private SimulationWorld world;
 
 
-    public officer(String name, int xPos, int yPos, SimulationWorld world) {
+    public officer(String name, int posX, int posY,int width,int height, SimulationWorld world) {
         this.name = name;
-        this.xPos = xPos;
-        this.yPos = yPos;
+        this.posX = posX;
+        this.posY = posY;
         this.world = world;
+        this.width = width;
+        this.height = height;
 
     }
 
     public void patrolto(Point p){
         //patrol a specific location
-            if(this.onpatrol){
-                return;
-            }else {
-                this.onpatrol = true;
-                //int Pos1 x
-                //int Pos2 y
+
                 double distance = this.getPosition().getDistance(p) + 1;
                 
                 if (distance > 1) {
                     turn(p);
                 }
-                this.onpatrol = false;
-            }
+                this.update();
+
+                this.world.update();
+
 
 
 
     }
     public void standardpatrolroute(boolean keepPosition){
-        //travels to all corners
-        this.onpatrol = true;
         int height = this.world.getHeight();
         int width = this.world.getWidth();
+
         Point corner1 = new Point(0,0);
-        Point corner2 = new Point(0,height);
-        Point corner3 = new Point(width,height);
-        Point corner4 = new Point(width,0);
+        Point Start = new Point(this.posX, this.posY);
 
-        if(corner1.getX()==this.xPos&& corner1.getY()==this.yPos ){
+        if(corner1.getX()==this.posX&& corner1.getY()==this.posY ){
         }else{
             turn(corner1);
         }
-        
-        turn(corner2);
-        turn(corner3);
-        turn(corner4);
-        if(keepPosition){
-            turn(new Point(this.xPos, this.yPos));
-        }else{
-            turn(corner1);
+        int i=0;
+        while(i<height) {
+            if(i+10<height){
+            turn(new Point(width,i));
+            i=i+5;
+            turn(new Point(width,i));
+            this.update();
+            turn(new Point(0,i));
+            i=i+5;
+            turn(new Point(0,i));
+            this.update();
+        }  else if(i+5<height){
+            turn(new Point(width,i));
+            i=i+5;
+            turn(new Point(width,i));
+            this.update();
+            turn(new Point(0,i));
+            this.update();
+            }else{
+            turn(new Point(width,i));
+            if(keepPosition){
+                turn(Start);
+            }else{
+                turn(corner1);
+                }
+                this.update();
+                this.world.update();
+            break;
         }
-
-        this.onpatrol = false;
+        }
     }
 
     @Override
@@ -71,3 +88,4 @@ public class officer extends Agent {
 
     }
 }
+
